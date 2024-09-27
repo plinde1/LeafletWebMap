@@ -10,6 +10,7 @@ var radarDisplayOptions = {
 
 var radar = L.tileLayer.wms(radarUrl, radarDisplayOptions).addTo(map);
 
+//https is different in pdf if this doesn't work
 var weatherAlertsUrl = 'https://www.weather.gov/alerts/active?region_type=land';
 $.getJSON(weatherAlertsUrl, function(data) {
 
