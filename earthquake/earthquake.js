@@ -10,7 +10,7 @@ $.getJSON(weatherAlertsUrl, function(data) {
 
     L.geoJSON(data, {
         style: function(feature){
-            let alertColor;
+            let alertColor = 'red';
             if (feature.properties.mag >= 6.0) alertColor = 'red';
             return { color: alertColor };
         },
