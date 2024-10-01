@@ -2,9 +2,11 @@
 ## Leaflet Web Map
 ### Pierson Linde
 
-#### Weather Map Demo
+#### Weather Map 
 https://plinde1.github.io/LeafletWebMap/weather/index.html
 
-#### Earthquake Project
+#### Earthquake Map
 https://plinde1.github.io/LeafletWebMap/earthquake/index.html
 
+#### Bonus Map
+https://plinde1.github.io/LeafletWebMap/Bonus/index.html
