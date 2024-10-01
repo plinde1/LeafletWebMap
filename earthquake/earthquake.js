@@ -1,5 +1,5 @@
 var map = L.map('earthquakemap').setView([38, -95], 4);
-var basemapUrl = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'; 
+var basemapUrl = 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png'; 
 var basemap = L.tileLayer(basemapUrl, 
 	{attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'	
 	}).addTo(map);
