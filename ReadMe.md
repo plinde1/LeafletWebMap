@@ -6,4 +6,5 @@
 https://plinde1.github.io/LeafletWebMap/weather/index.html
 
 #### Earthquake Project
+https://plinde1.github.io/LeafletWebMap/earthquake/index.html
 
