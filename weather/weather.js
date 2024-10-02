@@ -15,7 +15,7 @@ var radarDisplayOptions = {
 var radar = L.tileLayer.wms(radarUrl, radarDisplayOptions).addTo(map);
 
 
-var weatherAlertsUrl = 'https://www.weather.gov/documentation/services-web-api#/default/get_alerts_active)';
+var weatherAlertsUrl = 'https://www.weather.gov/documentation/services-web-api#/default/get_alerts_active';
 $.getJSON(weatherAlertsUrl, function(data) {
 
     L.geoJSON(data, {
