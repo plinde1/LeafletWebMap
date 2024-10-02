@@ -12,5 +12,3 @@ https://plinde1.github.io/LeafletWebMap/earthquake/index.html
 
 #### Bonus Map
 https://plinde1.github.io/LeafletWebMap/Bonus/index.html
-
-### Stuff
