@@ -4,7 +4,7 @@
 
 # Weather Map
 ### The Weather Map shows current weather and includes Extreme, Severe, and Minor alerts.
-#### To create this map I followed the demo closely to ensure that all of my pieces of my map worked in comparison to the video. Once I created the demo, I simply added a few more lines of code to create alerts for Extreme and Mino weather alerts. I also made sure to change the base map by looking at the leaflet maps available and putting in a new map PNG to make the weather alerts pop more. 
+### To create this map I followed the demo closely to ensure that all of my pieces of my map worked in comparison to the video. Once I created the demo, I simply added a few more lines of code to create alerts for Extreme and Mino weather alerts. I also made sure to change the base map by looking at the leaflet maps available and putting in a new map PNG to make the weather alerts pop more. 
 <https://plinde1.github.io/LeafletWebMap/weather>
 
 # Earthquake Map
@@ -14,7 +14,7 @@
 
 # Bonus Map
 ### The Bouns Map combines the Weather Map data and the Earthquake Map data and a "Toggle" button that allows you to turn off one layer and display the other.
-#### To create my bonus map I created a new folder and copied in the files from my weather map, Once I did that I renamed the files to match the bonus map assignment and made sure it worked independently of my other maps with the new name. I then added in my eathquakeAlertUrl and matching code to get both of the data sets to show up on the map on top of one another. Then I created a simple toggle button that made sure to replace the data with one set if the other was not present. This was a bit difficult to figure out and I had to make sure that the sets of data had unique variables so they could be distinct from one another. 
+### To create my bonus map I created a new folder and copied in the files from my weather map, Once I did that I renamed the files to match the bonus map assignment and made sure it worked independently of my other maps with the new name. I then added in my eathquakeAlertUrl and matching code to get both of the data sets to show up on the map on top of one another. Then I created a simple toggle button that made sure to replace the data with one set if the other was not present. This was a bit difficult to figure out and I had to make sure that the sets of data had unique variables so they could be distinct from one another. 
 <https://plinde1.github.io/LeafletWebMap/Bonus>
 
 
