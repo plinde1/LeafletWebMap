@@ -1,6 +1,6 @@
 # Assignment 4
-## Leaflet Web Map
-## Pierson Linde
+### Leaflet Web Map
+### Pierson Linde
 
 ## Weather Map
 ### The Weather Map shows current weather and includes, Extreme, Severe, and Minor alerts.
