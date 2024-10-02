@@ -1,7 +1,7 @@
 var map = L.map('earthquakemap').setView([38, -95], 4);
 var basemapUrl = 'https://tile.osm.ch/switzerland/{z}/{x}/{y}.png'; 
 var basemap = L.tileLayer(basemapUrl, 
-	{attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'	
+	{attribution: '&copy; <a href="https: + //www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'	
 	}).addTo(map);.addTo(map);
 
 
