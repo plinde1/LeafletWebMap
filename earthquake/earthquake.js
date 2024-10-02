@@ -53,7 +53,7 @@ $.getJSON(weatherAlertsUrl, function(data) {
         onEachFeature: function(feature, layer) { 
             const magnitude = feature.properties.mag;
             const place = feature.properties.place;
-            const time = new Date(feature.properties.time).toLocaleString(); // Format time
+            const time = new Date(feature.properties.time).toLocaleString();
             layer.bindPopup(`Magnitude: ${magnitude}<br>Location: ${place}<br>Time: ${time}`);
         }
     }).addTo(map);
