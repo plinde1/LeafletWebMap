@@ -1,9 +1,8 @@
 var map = L.map('earthquakemap').setView([38, -95], 4);
-var basemapUrl = 'https://tile.osm.ch/switzerland/{z}/{x}/{y}.png'; 
+var basemapUrl = 'https://tile.openstreetmap.de/{z}/{x}/{y}.png'; 
 var basemap = L.tileLayer(basemapUrl, 
 	{attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-	}).addTo(map);.addTo(map);
- 
+	}).addTo(map);
 
 var radarUrl = 'https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi';
 var radarDisplayOptions = {
