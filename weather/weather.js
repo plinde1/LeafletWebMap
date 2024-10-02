@@ -1,4 +1,4 @@
-var map = L.map('weatheremap').setView([38, -95], 4);
+var map = L.map('weathermap').setView([38, -95], 4);
 var basemapUrl = 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png'; 
 var basemap = L.tileLayer(basemapUrl, 
 	{attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'	
