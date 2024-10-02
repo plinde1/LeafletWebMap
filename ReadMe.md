@@ -3,7 +3,7 @@
 ### Pierson Linde
 
 #### Weather Map 
-https://plinde1.github.io/LeafletWebMap/weather
+https://plinde1.github.io/LeafletWebMap/weather/index.html
 
 
 #### Earthquake Map
