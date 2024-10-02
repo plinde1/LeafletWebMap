@@ -5,7 +5,7 @@
 #### Weather Map 
 https://plinde1.github.io/LeafletWebMap/weather
 
-
+weather
 #### Earthquake Map
 https://plinde1.github.io/LeafletWebMap/earthquake
 
