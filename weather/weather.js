@@ -1,8 +1,8 @@
-var map = L.map('weathermap').setView([51.505, -0.09], 13);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-	apikey: 'a6e3b4c0-5d45-4990-bd50-ffd2b38620ca'
-}).addTo(map);
+var map = L.map('weathermap').setView([38, -95], 4);
+var basemapUrl = 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png'; 
+var basemap = L.tileLayer(basemapUrl, 
+	{attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'	
+	}).addTo(map);
 
 var radarUrl = 'https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi';
 var radarDisplayOptions = {
