@@ -1,8 +1,8 @@
-var map = L.map('weathermap').setView([38, -95], 4);
-var Stadia_AlidadeSmooth = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.{ext}', {
-	attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a>
-	ext: 'png'
-});.addTo(map);
+var map = L.map('earthquakemap').setView([38, -95], 4);
+var basemapUrl = 'https://tile.osm.ch/switzerland/{z}/{x}/{y}.png'; 
+var basemap = L.tileLayer(basemapUrl, 
+	{attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'	
+	}).addTo(map);.addTo(map);
 
 
 var radarUrl = 'https://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi';
