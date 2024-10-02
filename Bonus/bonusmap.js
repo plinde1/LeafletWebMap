@@ -13,6 +13,7 @@ var radarDisplayOptions = {
 };
 
 var radar = L.tileLayer.wms(radarUrl, radarDisplayOptions).addTo(map);
+var earthquakeLayer;
 
 
 var weatherAlertsUrl = 'https://www.weather.gov/documentation/services-web-api#/default/get_alerts_active';
@@ -22,27 +23,7 @@ $.getJSON(weatherAlertsUrl, function(data) {
         style: function(feature){
             var alertColor = 'orange';
             if (feature.properties.severity === 'Severe') alertColor = 'orange';
-            return { color: alertColor };
-        },
-        onEachFeature: function(feature, layer) { 
-            layer.bindPopup(feature.properties.headline);
-        }
-    }).addTo(map);
-
-    L.geoJSON(data, {
-        style: function(feature){
-            var alertColor = 'red';
             if (feature.properties.severity === 'Extreme') alertColor = 'red';
-            return { color: alertColor };
-        },
-        onEachFeature: function(feature, layer) { 
-            layer.bindPopup(feature.properties.headline);
-        }
-    }).addTo(map);
-
-    L.geoJSON(data, {
-        style: function(feature){
-            var alertColor = 'green';
             if (feature.properties.severity === 'Minor') alertColor = 'green';
             return { color: alertColor };
         },
@@ -67,44 +48,49 @@ function createLegend() {
     };legend.addTo(map);
 }createLegend();
 
-
 var earthquakeAlertsUrl = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson';
 $.getJSON(earthquakeAlertsUrl, function(data) {
+    earthquakeLayer = L.geoJSON(data, {
+        pointToLayer: function(feature, latlng) {
+            let magnitude = feature.properties.mag;
+            let color;
+            let radius;
 
-L.geoJSON(data, {
-    pointToLayer: function(feature, latlng) {
-        let magnitude = feature.properties.mag;
-        let color;
-        let radius;
+            if (magnitude >= 6.0) {
+                color = 'red';
+                radius = 10;
+            } else if (magnitude >= 4.0) {
+                color = 'orange';
+                radius = 7;
+            } else {
+                color = 'green';
+                radius = 5; 
+            }
 
-        if (magnitude >= 6.0) {
-            color = 'red';
-            radius = 10;
-        } else if (magnitude >= 4.0) {
-            color = 'orange';
-            radius = 7;
-        } else {
-            color = 'green';
-            radius = 5; 
+            return L.circleMarker(latlng, {
+                radius: radius,
+                fillColor: color,
+                color: color,
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+            });
+        },
+        onEachFeature: function(feature, layer) { 
+            const magnitude = feature.properties.mag;
+            const place = feature.properties.place;
+            const time = new Date(feature.properties.time).toLocaleString();
+            layer.bindPopup(`Magnitude: ${magnitude}<br>Location: ${place}<br>Time: ${time}`);
         }
+    }).addTo(map); 
+});
 
-        return L.circleMarker(latlng, {
-            radius: radius,
-            fillColor: color,
-            color: color,
-            weight: 1,
-            opacity: 1,
-            fillOpacity: 0.8
-        });
-
-        
-    },
-    onEachFeature: function(feature, layer) { 
-        const magnitude = feature.properties.mag;
-        const place = feature.properties.place;
-        const time = new Date(feature.properties.time).toLocaleString();
-        layer.bindPopup(`Magnitude: ${magnitude}<br>Location: ${place}<br>Time: ${time}`);
+document.getElementById('toggleButton').addEventListener('click', function() {
+    if (map.hasLayer(radar)) {
+        map.removeLayer(radar);
+        map.addLayer(earthquakeLayer); 
+    } else {
+        map.addLayer(radar); 
+        map.removeLayer(earthquakeLayer);
     }
-}).addTo(map);
-
 });
